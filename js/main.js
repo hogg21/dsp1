@@ -1,7 +1,6 @@
 window.onload = function(){
 
      
-
     // EQ график чарт
     const ctx = document.getElementById('eq_chart');
     const myChart = new Chart(ctx, {
@@ -60,18 +59,22 @@ window.onload = function(){
                         max: 20000 // maximum value
                     }
                 }
-            }
+            },
         },
     });
+    // toggle buttons(hi, mid, low, sub) - EQ
     (function () {
         let buttonHigh = document.querySelector('.level_item')
         buttonHigh.addEventListener('click', function () {
             const showValue = myChart.isDatasetVisible(0)
             if (showValue === false) {
                 myChart.show(0)
+                myChart.data.datasets[0].borderWidth = 6
+                myChart.update()
             }
             if (showValue === true) {
                 myChart.hide(0)
+                myChart.data.datasets[0].borderWidth = 1
             }
         })
         let buttonMid = document.querySelector('.mid')
@@ -80,9 +83,11 @@ window.onload = function(){
             const showValue = myChart.isDatasetVisible(1)
             if (showValue === false) {
                 myChart.show(1)
+                myChart.data.datasets[1].borderWidth = 6
             }
             if (showValue === true) {
                 myChart.hide(1)
+                myChart.data.datasets[1].borderWidth = 1
             }
         })
         let buttonLow = document.querySelector('.low')
@@ -90,9 +95,11 @@ window.onload = function(){
             const showValue = myChart.isDatasetVisible(2)
             if (showValue === false) {
                 myChart.show(2)
+                myChart.data.datasets[2].borderWidth = 6
             }
             if (showValue === true) {
                 myChart.hide(2)
+                myChart.data.datasets[2].borderWidth = 1
             }
         })
 
@@ -101,13 +108,13 @@ window.onload = function(){
             const showValue = myChart.isDatasetVisible(3)
             if (showValue === false) {
                 myChart.show(3)
-            }
-            if (showValue === true) {
+                myChart.data.datasets[3].borderWidth = 6
+            } if (showValue === true) {
                 myChart.hide(3)
+                myChart.data.datasets[3].borderWidth = 1
             }
         })
     })();
-    
     // Char Line
     // Код для работы навигации в нижнем части
     let navLinks = document.querySelectorAll('.navigation a');
