@@ -1,0 +1,97 @@
+.swticher_block{
+    
+    width: 100%;
+    margin-bottom: 40px;
+    
+
+    .switcher_elements{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        .title{
+            font-weight: 500;
+            font-size: 20px;
+            line-height: 24px;
+            color: #AA83FF;
+        }
+
+        .swticher{
+            width: 70px;
+            height: 32px;
+            display: flex;
+            overflow: hidden;
+            align-items: center;
+            justify-content: center;
+            background: #303030;
+            border: 1px solid #4F4E4E;
+            box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.13);
+            border-radius: 80px;
+            position: relative;
+            cursor: pointer;
+            input{
+                display: none;
+
+                &:checked ~ .switcher_inner{
+                    transform: translateX(19px);
+                    color: #FFFFFF;
+                    .circle{
+                        background: #FFFFFF;
+                    }
+
+                    &::after{
+                        background: #8E59FF;
+                    }
+                }
+            }
+
+            .switcher_inner{
+                display: flex;
+                align-items: center;
+                font-weight: 500;
+                font-size: 14px;
+                line-height: 17px;
+                color: #9D9D9D;
+                text-shadow: 0px 2px 4px rgba(19, 19, 19, 0.19);
+                text-transform: uppercase;
+                transform: translateX(-16px);
+                transition: .3s all ease;
+
+                span{
+                    z-index: 10;
+                }
+
+                .circle{
+                    display: inline-block;
+                    height: 21px;
+                    width: 21px;
+                    box-shadow: inset 0px 3px 3px rgba(130, 130, 130, 0.8);
+                    background: #9D9D9D;
+                    border: 1px solid #4F4E4E;
+                    border-radius: 50%;
+                    margin: 0 5px 0 11px;
+                    transition: .3s all ease;
+                }
+
+                &:after{
+                    content: '';
+                    display: block;
+                    height: 150%;
+                    width: 150%;
+                    background: #303030;
+                    position: absolute;
+                    left: -25%;
+                    top: 0;
+                    bottom: 0;
+                    right: 0;
+                    margin: auto;
+                    transition: .3s all ease;
+                }
+            }
+        }
+    }
+    
+    @media #{$mini} {
+        margin-bottom: 15px;
+    }
+}

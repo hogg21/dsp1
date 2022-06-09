@@ -1,0 +1,837 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/main.css">
+    <title>DSP1 application</title>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="container">
+            <header>
+                <div class="about">
+                    <a href="#">
+                        <img src="images/question.svg" alt="">
+                    </a>
+                </div>
+                <div class="more">
+                    <a href="#">
+                        <img src="images/more_dots.svg" alt="">
+                    </a>
+                </div>
+            </header>
+
+            <div class="content">
+                <div class="content_block level_1 ">
+                    <a href="#"  class="app_name">
+                        <div>
+                            DSP1<br><span>Application</span>
+                        </div>
+                    </a>
+                </div>
+                <div class="content_block " id="speakers">
+                    <div class="swticher_block">
+                        <div class="switcher_elements">
+                            <span class="title">Speakers All</span>
+                            <label class="swticher">
+                                <input type="checkbox" name="switchers_all">
+                                <div class="switcher_inner">
+                                    <span>On</span>
+                                    <span class="circle"></span>
+                                    <span>Off</span>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="speakers_all">
+                        <div class="elements_row center">
+                            <label class="speaker_item">
+                                <input type="checkbox" name="speakers[front_left][high]">
+                                <span class="side_name">FL</span>
+                                <span class="level_name">hi</span>
+                                <span class="background"></span>
+                                <svg width="21" height="19" viewBox="0 0 21 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M3.5 11C9.96154 7.37781 15.5256 9.49075 17.5 11" stroke="#818181" stroke-linecap="round"/>
+                                    <path d="M6.5 14C10.1923 12.1889 13.3718 13.2454 14.5 14" stroke="#818181" stroke-linecap="round"/>
+                                    <path d="M0.5 8C9.73077 2.56671 17.6795 5.73613 20.5 8" stroke="#818181" stroke-linecap="round"/>
+                                </svg>
+                            </label>
+                            <label class="speaker_item">
+                                <input type="checkbox" name="speakers[front_right][high]">
+                                <span class="side_name">FR</span>
+                                <span class="level_name">hi</span>
+                                <span class="background"></span>
+                                <svg width="21" height="19" viewBox="0 0 21 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M3.5 11C9.96154 7.37781 15.5256 9.49075 17.5 11" stroke="#818181" stroke-linecap="round"/>
+                                    <path d="M6.5 14C10.1923 12.1889 13.3718 13.2454 14.5 14" stroke="#818181" stroke-linecap="round"/>
+                                    <path d="M0.5 8C9.73077 2.56671 17.6795 5.73613 20.5 8" stroke="#818181" stroke-linecap="round"/>
+                                </svg>
+                            </label>
+                        </div>
+                        <div class="elements_row aside">
+                            <label class="speaker_item">
+                                <input type="checkbox" name="speakers[front_left][mid]">
+                                <span class="side_name">FL</span>
+                                <span class="level_name">mid</span>
+                                <span class="background"></span>
+                                <svg width="21" height="19" viewBox="0 0 21 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M3.5 11C9.96154 7.37781 15.5256 9.49075 17.5 11" stroke="#818181" stroke-linecap="round"/>
+                                    <path d="M6.5 14C10.1923 12.1889 13.3718 13.2454 14.5 14" stroke="#818181" stroke-linecap="round"/>
+                                    <path d="M0.5 8C9.73077 2.56671 17.6795 5.73613 20.5 8" stroke="#818181" stroke-linecap="round"/>
+                                </svg>
+                            </label>
+                            <label class="speaker_item">
+                                <input type="checkbox" name="speakers[front_right][mid]">
+                                <span class="side_name">FR</span>
+                                <span class="level_name">mid</span>
+                                <span class="background"></span>
+                                <svg width="21" height="19" viewBox="0 0 21 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M3.5 11C9.96154 7.37781 15.5256 9.49075 17.5 11" stroke="#818181" stroke-linecap="round"/>
+                                    <path d="M6.5 14C10.1923 12.1889 13.3718 13.2454 14.5 14" stroke="#818181" stroke-linecap="round"/>
+                                    <path d="M0.5 8C9.73077 2.56671 17.6795 5.73613 20.5 8" stroke="#818181" stroke-linecap="round"/>
+                                </svg>
+                            </label>
+                        </div>
+                        <div class="elements_row aside">
+                            <label class="speaker_item">
+                                <input type="checkbox" name="speakers[front_left][low]">
+                                <span class="side_name">FL</span>
+                                <span class="level_name">low</span>
+                                <span class="background"></span>
+                                <svg width="21" height="19" viewBox="0 0 21 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M3.5 11C9.96154 7.37781 15.5256 9.49075 17.5 11" stroke="#818181" stroke-linecap="round"/>
+                                    <path d="M6.5 14C10.1923 12.1889 13.3718 13.2454 14.5 14" stroke="#818181" stroke-linecap="round"/>
+                                    <path d="M0.5 8C9.73077 2.56671 17.6795 5.73613 20.5 8" stroke="#818181" stroke-linecap="round"/>
+                                </svg>
+                            </label>
+                            <label class="speaker_item">
+                                <input type="checkbox" name="speakers[front_right][low]">
+                                <span class="side_name">FR</span>
+                                <span class="level_name">low</span>
+                                <span class="background"></span>
+                                <svg width="21" height="19" viewBox="0 0 21 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M3.5 11C9.96154 7.37781 15.5256 9.49075 17.5 11" stroke="#818181" stroke-linecap="round"/>
+                                    <path d="M6.5 14C10.1923 12.1889 13.3718 13.2454 14.5 14" stroke="#818181" stroke-linecap="round"/>
+                                    <path d="M0.5 8C9.73077 2.56671 17.6795 5.73613 20.5 8" stroke="#818181" stroke-linecap="round"/>
+                                </svg>
+                            </label>
+                        </div>
+                        <div class="elements_row center">
+                            <label class="speaker_item">
+                                <input type="checkbox" name="speakers[front_left][high]">
+                                <span class="side_name">FL</span>
+                                <span class="level_name">hi</span>
+                                <span class="background"></span>
+                                <svg width="21" height="19" viewBox="0 0 21 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M3.5 11C9.96154 7.37781 15.5256 9.49075 17.5 11" stroke="#818181" stroke-linecap="round"/>
+                                    <path d="M6.5 14C10.1923 12.1889 13.3718 13.2454 14.5 14" stroke="#818181" stroke-linecap="round"/>
+                                    <path d="M0.5 8C9.73077 2.56671 17.6795 5.73613 20.5 8" stroke="#818181" stroke-linecap="round"/>
+                                </svg>
+                            </label>
+                            <label class="speaker_item">
+                                <input type="checkbox" name="speakers[front_right][high]">
+                                <span class="side_name">FR</span>
+                                <span class="level_name">hi</span>
+                                <span class="background"></span>
+                                <svg width="21" height="19" viewBox="0 0 21 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M3.5 11C9.96154 7.37781 15.5256 9.49075 17.5 11" stroke="#818181" stroke-linecap="round"/>
+                                    <path d="M6.5 14C10.1923 12.1889 13.3718 13.2454 14.5 14" stroke="#818181" stroke-linecap="round"/>
+                                    <path d="M0.5 8C9.73077 2.56671 17.6795 5.73613 20.5 8" stroke="#818181" stroke-linecap="round"/>
+                                </svg>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                <div class="content_block active" id="eq">
+                    <canvas class="chart_block" id="eq_chart">
+                    </canvas>
+                    <div class="settings_block">
+                        <div class="levels_block">
+                            <div class="level_item high active">
+                                hi
+                            </div>
+                            <div class="level_item mid">
+                                mid
+                            </div>
+                            <div class="level_item low">
+                                low
+                            </div>
+                            <div class="level_item sub">
+                                sub
+                            </div>
+                        </div>
+                        <div class="positions_block">
+                            <div class="position_item left">Left</div>
+                            <div class="position_item common active">Common</div>
+                            <div class="position_item right">Right</div>
+                        </div>
+                        <div class="frequency_block">
+                            
+                            <div class="frequency_levels">
+                                <div class="level_name">Low</div>
+                                <div class="fl_levels_row">
+                                    <div class="fl_item low active" data-target=".low">
+                                        Low
+                                    </div>
+                                    <div class="fl_item high" data-target=".high">
+                                        High
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="frequency_levels_item low active">
+                                <div class="frequency_range ">
+                                    <div class="range_text">
+                                        <span class="min">min</span>
+                                        <span class="range_value">
+                                            <span class="number">1.1</span>
+                                            <span>kHz</span>
+                                        </span>
+                                        <span class="max">max</span>
+                                    </div>
+                                    <input class="cross_range" type="range" name="cross[common_high][fr_low]" min="0" max="24">
+                                </div>
+                                <div class="frequency_slope">
+                                    <div class="title">Slope</div>
+                                    <div class="input">
+                                        <select name="cross[common_high][low][slope]" id="">
+                                            <option value="-6dB/Oct">-6dB/Oct</option>
+                                            <option value="-12dB/Oct">-12dB/Oct</option>
+                                            <option value="-18dB/Oct" selected>-18dB/Oct</option>
+                                            <option value="-24dB/Oct">-24dB/Oct</option>
+                                            <option value="-30dB/Oct">-30dB/Oct</option>
+                                        </select>
+                                    </div>
+                                    <div class="slope_navigation">
+
+                                        <span class="prev">
+                                            <svg width="9" height="16" viewBox="0 0 9 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M8 1L1.6949 7.533C1.31119 7.93057 1.32264 8.56399 1.72047 8.94744L8 15" stroke="#C4C4C4" stroke-width="2" stroke-linecap="round"/>
+                                            </svg>
+                                        </span>
+
+                                        <span class="next">
+                                            <svg width="9" height="16" viewBox="0 0 9 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M8 1L1.6949 7.533C1.31119 7.93057 1.32264 8.56399 1.72047 8.94744L8 15" stroke="#C4C4C4" stroke-width="2" stroke-linecap="round"/>
+                                            </svg>
+                                        </span>
+
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="frequency_levels_item high">
+                                <div class="frequency_range">
+                                    <div class="range_text">
+                                        <span class="min">min</span>
+                                        <span class="range_value">
+                                            <span class="number">1.1</span>
+                                            <span>kHz</span>
+                                        </span>
+                                        <span class="max">max</span>
+                                    </div>
+                                    <input class="cross_range" type="range" name="cross[common_high][fr_high]" min="0" max="24">
+                                </div>
+                                <div class="frequency_slope">
+                                    <div class="title">Slope</div>
+                                    <div class="input">
+                                        <select name="cross[common_high][high][slope]" id="">
+                                            <option value="-6dB/Oct">-6dB/Oct</option>
+                                            <option value="-12dB/Oct">-12dB/Oct</option>
+                                            <option value="-18dB/Oct" selected>-18dB/Oct</option>
+                                            <option value="-24dB/Oct">-24dB/Oct</option>
+                                            <option value="-30dB/Oct">-30dB/Oct</option>
+                                        </select>
+                                    </div>
+                                    <div class="slope_navigation">
+
+                                        <span class="prev">
+                                            <svg width="9" height="16" viewBox="0 0 9 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M8 1L1.6949 7.533C1.31119 7.93057 1.32264 8.56399 1.72047 8.94744L8 15" stroke="#C4C4C4" stroke-width="2" stroke-linecap="round"/>
+                                            </svg>
+                                        </span>
+
+                                        <span class="next">
+                                            <svg width="9" height="16" viewBox="0 0 9 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M8 1L1.6949 7.533C1.31119 7.93057 1.32264 8.56399 1.72047 8.94744L8 15" stroke="#C4C4C4" stroke-width="2" stroke-linecap="round"/>
+                                            </svg>
+                                        </span>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="content_block" id="cross">
+                    <div class="chart_block" id="cross_chart">
+                    </div>
+                    <div class="settings_block">
+                        <div class="levels_block">
+                            <div class="level_item high active">
+                                hi
+                            </div>
+                            <div class="level_item mid">
+                                mid
+                            </div>
+                            <div class="level_item low">
+                                low
+                            </div>
+                            <div class="level_item sub">
+                                sub
+                            </div>
+                        </div>
+                        <div class="positions_block">
+                            <div class="position_item left">Left</div>
+                            <div class="position_item common active">Common</div>
+                            <div class="position_item right">Right</div>
+                        </div>
+                        <div class="frequency_block">
+                            
+                            <div class="frequency_levels">
+                                <div class="level_name">Low</div>
+                                <div class="fl_levels_row">
+                                    <div class="fl_item low active" data-target=".low">
+                                        Low
+                                    </div>
+                                    <div class="fl_item high" data-target=".high">
+                                        High
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="frequency_levels_item low active">
+                                <div class="frequency_range ">
+                                    <div class="range_text">
+                                        <span class="min">min</span>
+                                        <span class="range_value">
+                                            <span class="number">1.1</span>
+                                            <span>kHz</span>
+                                        </span>
+                                        <span class="max">max</span>
+                                    </div>
+                                    <input class="cross_range" type="range" name="cross[common_high][fr_low]" min="0" max="24">
+                                </div>
+                                <div class="frequency_slope">
+                                    <div class="title">Slope</div>
+                                    <div class="input">
+                                        <select name="cross[common_high][low][slope]" id="">
+                                            <option value="-6dB/Oct">-6dB/Oct</option>
+                                            <option value="-12dB/Oct">-12dB/Oct</option>
+                                            <option value="-18dB/Oct" selected>-18dB/Oct</option>
+                                            <option value="-24dB/Oct">-24dB/Oct</option>
+                                            <option value="-30dB/Oct">-30dB/Oct</option>
+                                        </select>
+                                    </div>
+                                    <div class="slope_navigation">
+
+                                        <span class="prev">
+                                            <svg width="9" height="16" viewBox="0 0 9 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M8 1L1.6949 7.533C1.31119 7.93057 1.32264 8.56399 1.72047 8.94744L8 15" stroke="#C4C4C4" stroke-width="2" stroke-linecap="round"/>
+                                            </svg>
+                                        </span>
+
+                                        <span class="next">
+                                            <svg width="9" height="16" viewBox="0 0 9 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M8 1L1.6949 7.533C1.31119 7.93057 1.32264 8.56399 1.72047 8.94744L8 15" stroke="#C4C4C4" stroke-width="2" stroke-linecap="round"/>
+                                            </svg>
+                                        </span>
+
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="frequency_levels_item high">
+                                <div class="frequency_range">
+                                    <div class="range_text">
+                                        <span class="min">min</span>
+                                        <span class="range_value">
+                                            <span class="number">1.1</span>
+                                            <span>kHz</span>
+                                        </span>
+                                        <span class="max">max</span>
+                                    </div>
+                                    <input class="cross_range" type="range" name="cross[common_high][fr_high]" min="0" max="24">
+                                </div>
+                                <div class="frequency_slope">
+                                    <div class="title">Slope</div>
+                                    <div class="input">
+                                        <select name="cross[common_high][high][slope]" id="">
+                                            <option value="-6dB/Oct">-6dB/Oct</option>
+                                            <option value="-12dB/Oct">-12dB/Oct</option>
+                                            <option value="-18dB/Oct" selected>-18dB/Oct</option>
+                                            <option value="-24dB/Oct">-24dB/Oct</option>
+                                            <option value="-30dB/Oct">-30dB/Oct</option>
+                                        </select>
+                                    </div>
+                                    <div class="slope_navigation">
+
+                                        <span class="prev">
+                                            <svg width="9" height="16" viewBox="0 0 9 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M8 1L1.6949 7.533C1.31119 7.93057 1.32264 8.56399 1.72047 8.94744L8 15" stroke="#C4C4C4" stroke-width="2" stroke-linecap="round"/>
+                                            </svg>
+                                        </span>
+
+                                        <span class="next">
+                                            <svg width="9" height="16" viewBox="0 0 9 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M8 1L1.6949 7.533C1.31119 7.93057 1.32264 8.56399 1.72047 8.94744L8 15" stroke="#C4C4C4" stroke-width="2" stroke-linecap="round"/>
+                                            </svg>
+                                        </span>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="content_block " id="tcorr">
+                    <div class="speakers_params">
+                        
+                        <div class="param_item" id="front_high_left">
+                            <div class="speaker_title">Front High (left)</div>
+                            <div class="speaker_range">
+                                <div class="range_text">
+                                    <div>min</div>
+                                    <div class="range_value"><span class="number">15</span> <span>msec</span></div>
+                                    <div>max</div>
+                                </div>
+                                <input type="range" name="tcorr[front_left][mid][range]" min="0" max="20" value="15">
+                            </div>
+                            <div class="param_footer">
+                                <div class="distance">
+                                    <div class="title">Delay distance</div>
+                                    <div class="distance_value">
+                                        <span>Front left High</span>
+                                        <span class="value">100 cm</span>
+                                    </div>
+                                </div>
+                                <div class="phase">
+                                    <div class="title">Phase</div>
+                                    <div class="value">
+                                        <label class="phase_item">
+                                            <input type="radio" name="tcorr[front_left][mid][phase]" value="0">
+                                            <span>0</span>
+                                            <span class="bg"></span>
+                                        </label>
+                                        <label class="phase_item">
+                                            <input type="radio" name="tcorr[front_left][mid][phase]" value="180" checked>
+                                            <span>180</span>
+                                            <span class="bg"></span>
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="param_item" id="front_high_right">
+                            <div class="speaker_title">Front High (right)</div>
+                            <div class="speaker_range">
+                                <div class="range_text">
+                                    <div>min</div>
+                                    <div class="range_value"><span class="number">15</span> <span>msec</span></div>
+                                    <div>max</div>
+                                </div>
+                                <input type="range" name="tcorr[front_right][high][range]" min="0" max="20" value="15">
+                            </div>
+                            <div class="param_footer">
+                                <div class="distance">
+                                    <div class="title">Delay distance</div>
+                                    <div class="distance_value">
+                                        <span>Front right High</span>
+                                        <span class="value">100 cm</span>
+                                    </div>
+                                </div>
+                                <div class="phase">
+                                    <div class="title">Phase</div>
+                                    <div class="value">
+                                        <label class="phase_item">
+                                            <input type="radio" name="tcorr[front_right][high][phase]" value="0">
+                                            <span>0</span>
+                                            <span class="bg"></span>
+                                        </label>
+                                        <label class="phase_item">
+                                            <input type="radio" name="tcorr[front_right][high][phase]" value="180" checked>
+                                            <span>180</span>
+                                            <span class="bg"></span>
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="param_item" id="front_mid_left">
+                            <div class="speaker_title">Front Mid (left)</div>
+                            <div class="speaker_range">
+                                <div class="range_text">
+                                    <div>min</div>
+                                    <div class="range_value"><span class="number">15</span> <span>msec</span></div>
+                                    <div>max</div>
+                                </div>
+                                <input type="range" name="tcorr[front_left][mid][range]" min="0" max="20" value="15">
+                            </div>
+                            <div class="param_footer">
+                                <div class="distance">
+                                    <div class="title">Delay distance</div>
+                                    <div class="distance_value">
+                                        <span>Front left Mid</span>
+                                        <span class="value">100 cm</span>
+                                    </div>
+                                </div>
+                                <div class="phase">
+                                    <div class="title">Phase</div>
+                                    <div class="value">
+                                        <label class="phase_item">
+                                            <input type="radio" name="tcorr[front_left][mid][phase]" value="0">
+                                            <span>0</span>
+                                            <span class="bg"></span>
+                                        </label>
+                                        <label class="phase_item">
+                                            <input type="radio" name="tcorr[front_left][mid][phase]" value="180" checked>
+                                            <span>180</span>
+                                            <span class="bg"></span>
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="param_item" id="front_mid_right">
+                            <div class="speaker_title">Front Mid (right)</div>
+                            <div class="speaker_range">
+                                <div class="range_text">
+                                    <div>min</div>
+                                    <div class="range_value"><span class="number">15</span> <span>msec</span></div>
+                                    <div>max</div>
+                                </div>
+                                <input type="range" name="tcorr[front_left][mid][range]" min="0" max="20" value="15">
+                            </div>
+                            <div class="param_footer">
+                                <div class="distance">
+                                    <div class="title">Delay distance</div>
+                                    <div class="distance_value">
+                                        <span>Front right Mid</span>
+                                        <span class="value">100 cm</span>
+                                    </div>
+                                </div>
+                                <div class="phase">
+                                    <div class="title">Phase</div>
+                                    <div class="value">
+                                        <label class="phase_item">
+                                            <input type="radio" name="tcorr[front_right][mid][phase]" value="0">
+                                            <span>0</span>
+                                            <span class="bg"></span>
+                                        </label>
+                                        <label class="phase_item">
+                                            <input type="radio" name="tcorr[front_right][mid][phase]" value="180" checked>
+                                            <span>180</span>
+                                            <span class="bg"></span>
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="param_item" id="front_low_left">
+                            <div class="speaker_title">Front Low (left)</div>
+                            <div class="speaker_range">
+                                <div class="range_text">
+                                    <div>min</div>
+                                    <div class="range_value"><span class="number">15</span> <span>msec</span></div>
+                                    <div>max</div>
+                                </div>
+                                <input type="range" name="tcorr[front_left][low][range]" min="0" max="20" value="15">
+                            </div>
+                            <div class="param_footer">
+                                <div class="distance">
+                                    <div class="title">Delay distance</div>
+                                    <div class="distance_value">
+                                        <span>Front left Low</span>
+                                        <span class="value">100 cm</span>
+                                    </div>
+                                </div>
+                                <div class="phase">
+                                    <div class="title">Phase</div>
+                                    <div class="value">
+                                        <label class="phase_item">
+                                            <input type="radio" name="tcorr[front_left][low][phase]" value="0">
+                                            <span>0</span>
+                                            <span class="bg"></span>
+                                        </label>
+                                        <label class="phase_item">
+                                            <input type="radio" name="tcorr[front_left][low][phase]" value="180" checked>
+                                            <span>180</span>
+                                            <span class="bg"></span>
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="param_item" id="front_low_right">
+                            <div class="speaker_title">Front Low (right)</div>
+                            <div class="speaker_range">
+                                <div class="range_text">
+                                    <div>min</div>
+                                    <div class="range_value"><span class="number">15</span> <span>msec</span></div>
+                                    <div>max</div>
+                                </div>
+                                <input type="range" name="tcorr[front_right][low][range]" min="0" max="20" value="15">
+                            </div>
+                            <div class="param_footer">
+                                <div class="distance">
+                                    <div class="title">Delay distance</div>
+                                    <div class="distance_value">
+                                        <span>Front right Low</span>
+                                        <span class="value">100 cm</span>
+                                    </div>
+                                </div>
+                                <div class="phase">
+                                    <div class="title">Phase</div>
+                                    <div class="value">
+                                        <label class="phase_item">
+                                            <input type="radio" name="tcorr[front_right][low][phase]" value="0">
+                                            <span>0</span>
+                                            <span class="bg"></span>
+                                        </label>
+                                        <label class="phase_item">
+                                            <input type="radio" name="tcorr[front_right][low][phase]" value="180" checked>
+                                            <span>180</span>
+                                            <span class="bg"></span>
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="param_item" id="sub_left">
+                            <div class="speaker_title">SUB (left)</div>
+                            <div class="speaker_range">
+                                <div class="range_text">
+                                    <div>min</div>
+                                    <div class="range_value"><span class="number">15</span> <span>msec</span></div>
+                                    <div>max</div>
+                                </div>
+                                <input type="range" name="tcorr[sub][left][range]" min="0" max="20" value="15">
+                            </div>
+                            <div class="param_footer">
+                                <div class="distance">
+                                    <div class="title">Delay distance</div>
+                                    <div class="distance_value">
+                                        <span>SUB left</span>
+                                        <span class="value">100 cm</span>
+                                    </div>
+                                </div>
+                                <div class="phase">
+                                    <div class="title">Phase</div>
+                                    <div class="value">
+                                        <label class="phase_item">
+                                            <input type="radio" name="tcorr[sub][left][phase]" value="0">
+                                            <span>0</span>
+                                            <span class="bg"></span>
+                                        </label>
+                                        <label class="phase_item">
+                                            <input type="radio" name="tcorr[sub][left][phase]" value="180" checked>
+                                            <span>180</span>
+                                            <span class="bg"></span>
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="param_item" id="sub_right">
+                            <div class="speaker_title">SUB (right)</div>
+                            <div class="speaker_range">
+                                <div class="range_text">
+                                    <div>min</div>
+                                    <div class="range_value"><span class="number">15</span> <span>msec</span></div>
+                                    <div>max</div>
+                                </div>
+                                <input type="range" name="tcorr[sub][right][range]" min="0" max="20" value="15">
+                            </div>
+                            <div class="param_footer">
+                                <div class="distance">
+                                    <div class="title">Delay distance</div>
+                                    <div class="distance_value">
+                                        <span>SUB right</span>
+                                        <span class="value">100 cm</span>
+                                    </div>
+                                </div>
+                                <div class="phase">
+                                    <div class="title">Phase</div>
+                                    <div class="value">
+                                        <label class="phase_item">
+                                            <input type="radio" name="tcorr[sub][right][phase]" value="0">
+                                            <span>0</span>
+                                            <span class="bg"></span>
+                                        </label>
+                                        <label class="phase_item">
+                                            <input type="radio" name="tcorr[sub][right][phase]" value="180" checked>
+                                            <span>180</span>
+                                            <span class="bg"></span>
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="speakers_all">
+                        <div class="elements_row center">
+                            <label class="speaker_item">
+                                <input type="checkbox" name="tcorr[front_left][high]" data-target="#front_high_left">
+                                <span class="side_name">FL</span>
+                                <span class="level_name">hi</span>
+                                <span class="background"></span>
+                                <svg width="21" height="21" viewBox="0 0 21 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M8.0469 1.83128L7.76225 3.49422C7.7079 3.81173 7.50393 4.08361 7.21431 4.22461L6.50452 4.57017C6.26786 4.68538 5.99532 4.70265 5.74602 4.61822L3.98892 4.02314C3.5241 3.86571 3.01374 4.06885 2.78423 4.50264L1.40091 7.11724C1.17022 7.55327 1.29195 8.09238 1.68761 8.38698L2.77965 9.20009C3.03309 9.3888 3.18243 9.68619 3.18243 10.0022V11.1228C3.18243 11.4388 3.03309 11.7362 2.77965 11.9249L1.68761 12.738C1.29195 13.0326 1.17022 13.5717 1.40091 14.0078L2.75343 16.5642C2.99611 17.0228 3.54932 17.2197 4.02719 17.0174L5.5818 16.3592C5.92232 16.2151 6.31459 16.2706 6.60173 16.5036L7.394 17.1464C7.57598 17.2941 7.70032 17.501 7.74532 17.731L8.03112 19.192C8.12294 19.6614 8.53426 20 9.01252 20H11.9337C12.3775 20 12.7683 19.7074 12.8932 19.2816L13.365 17.6738C13.4221 17.4792 13.537 17.3066 13.6945 17.1788L14.518 16.5106C14.8097 16.2739 15.2094 16.2207 15.5528 16.3727L16.965 16.9977C17.4452 17.2102 18.008 17.0151 18.2536 16.5509L19.5991 14.0078C19.8298 13.5717 19.7081 13.0326 19.3124 12.738L18.2204 11.9249C17.9669 11.7362 17.8176 11.4388 17.8176 11.1228V10.0022C17.8176 9.68619 17.9669 9.3888 18.2204 9.20009L19.2621 8.42445C19.6792 8.11387 19.7886 7.53543 19.5138 7.09393L17.8789 4.46734C17.6211 4.05314 17.102 3.88545 16.6506 4.07052L15.4076 4.58011C15.144 4.6882 14.8468 4.67869 14.5906 4.55396L13.8685 4.20245C13.6047 4.07402 13.4106 3.83621 13.3377 3.55203L12.8753 1.75131C12.7618 1.30915 12.3633 1 11.9068 1H9.03256C8.54538 1 8.12909 1.35108 8.0469 1.83128Z" stroke="#9D9D9D"/>
+                                    <circle cx="10.5" cy="10.5" r="3" stroke="#9D9D9D"/>
+                                </svg>
+                                    
+                            </label>
+                            <label class="speaker_item">
+                                <input type="checkbox" name="tcorr[front_right][high]" data-target="#front_high_right">
+                                <span class="side_name">FR</span>
+                                <span class="level_name">hi</span>
+                                <span class="background"></span>
+                                <svg width="21" height="21" viewBox="0 0 21 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M8.0469 1.83128L7.76225 3.49422C7.7079 3.81173 7.50393 4.08361 7.21431 4.22461L6.50452 4.57017C6.26786 4.68538 5.99532 4.70265 5.74602 4.61822L3.98892 4.02314C3.5241 3.86571 3.01374 4.06885 2.78423 4.50264L1.40091 7.11724C1.17022 7.55327 1.29195 8.09238 1.68761 8.38698L2.77965 9.20009C3.03309 9.3888 3.18243 9.68619 3.18243 10.0022V11.1228C3.18243 11.4388 3.03309 11.7362 2.77965 11.9249L1.68761 12.738C1.29195 13.0326 1.17022 13.5717 1.40091 14.0078L2.75343 16.5642C2.99611 17.0228 3.54932 17.2197 4.02719 17.0174L5.5818 16.3592C5.92232 16.2151 6.31459 16.2706 6.60173 16.5036L7.394 17.1464C7.57598 17.2941 7.70032 17.501 7.74532 17.731L8.03112 19.192C8.12294 19.6614 8.53426 20 9.01252 20H11.9337C12.3775 20 12.7683 19.7074 12.8932 19.2816L13.365 17.6738C13.4221 17.4792 13.537 17.3066 13.6945 17.1788L14.518 16.5106C14.8097 16.2739 15.2094 16.2207 15.5528 16.3727L16.965 16.9977C17.4452 17.2102 18.008 17.0151 18.2536 16.5509L19.5991 14.0078C19.8298 13.5717 19.7081 13.0326 19.3124 12.738L18.2204 11.9249C17.9669 11.7362 17.8176 11.4388 17.8176 11.1228V10.0022C17.8176 9.68619 17.9669 9.3888 18.2204 9.20009L19.2621 8.42445C19.6792 8.11387 19.7886 7.53543 19.5138 7.09393L17.8789 4.46734C17.6211 4.05314 17.102 3.88545 16.6506 4.07052L15.4076 4.58011C15.144 4.6882 14.8468 4.67869 14.5906 4.55396L13.8685 4.20245C13.6047 4.07402 13.4106 3.83621 13.3377 3.55203L12.8753 1.75131C12.7618 1.30915 12.3633 1 11.9068 1H9.03256C8.54538 1 8.12909 1.35108 8.0469 1.83128Z" stroke="#9D9D9D"/>
+                                    <circle cx="10.5" cy="10.5" r="3" stroke="#9D9D9D"/>
+                                </svg>
+                            </label>
+                        </div>
+                        <div class="elements_row aside">
+                            <label class="speaker_item">
+                                <input type="checkbox" name="tcorr[front_left][mid]"  data-target="#front_mid_left">
+                                <span class="side_name">FL</span>
+                                <span class="level_name">mid</span>
+                                <span class="background"></span>
+                                <svg width="21" height="21" viewBox="0 0 21 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M8.0469 1.83128L7.76225 3.49422C7.7079 3.81173 7.50393 4.08361 7.21431 4.22461L6.50452 4.57017C6.26786 4.68538 5.99532 4.70265 5.74602 4.61822L3.98892 4.02314C3.5241 3.86571 3.01374 4.06885 2.78423 4.50264L1.40091 7.11724C1.17022 7.55327 1.29195 8.09238 1.68761 8.38698L2.77965 9.20009C3.03309 9.3888 3.18243 9.68619 3.18243 10.0022V11.1228C3.18243 11.4388 3.03309 11.7362 2.77965 11.9249L1.68761 12.738C1.29195 13.0326 1.17022 13.5717 1.40091 14.0078L2.75343 16.5642C2.99611 17.0228 3.54932 17.2197 4.02719 17.0174L5.5818 16.3592C5.92232 16.2151 6.31459 16.2706 6.60173 16.5036L7.394 17.1464C7.57598 17.2941 7.70032 17.501 7.74532 17.731L8.03112 19.192C8.12294 19.6614 8.53426 20 9.01252 20H11.9337C12.3775 20 12.7683 19.7074 12.8932 19.2816L13.365 17.6738C13.4221 17.4792 13.537 17.3066 13.6945 17.1788L14.518 16.5106C14.8097 16.2739 15.2094 16.2207 15.5528 16.3727L16.965 16.9977C17.4452 17.2102 18.008 17.0151 18.2536 16.5509L19.5991 14.0078C19.8298 13.5717 19.7081 13.0326 19.3124 12.738L18.2204 11.9249C17.9669 11.7362 17.8176 11.4388 17.8176 11.1228V10.0022C17.8176 9.68619 17.9669 9.3888 18.2204 9.20009L19.2621 8.42445C19.6792 8.11387 19.7886 7.53543 19.5138 7.09393L17.8789 4.46734C17.6211 4.05314 17.102 3.88545 16.6506 4.07052L15.4076 4.58011C15.144 4.6882 14.8468 4.67869 14.5906 4.55396L13.8685 4.20245C13.6047 4.07402 13.4106 3.83621 13.3377 3.55203L12.8753 1.75131C12.7618 1.30915 12.3633 1 11.9068 1H9.03256C8.54538 1 8.12909 1.35108 8.0469 1.83128Z" stroke="#9D9D9D"/>
+                                    <circle cx="10.5" cy="10.5" r="3" stroke="#9D9D9D"/>
+                                </svg>
+                            </label>
+                            <label class="speaker_item">
+                                <input type="checkbox" name="tcorr[front_right][mid]" data-target="#front_mid_right">
+                                <span class="side_name">FR</span>
+                                <span class="level_name">mid</span>
+                                <span class="background"></span>
+                                <svg width="21" height="21" viewBox="0 0 21 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M8.0469 1.83128L7.76225 3.49422C7.7079 3.81173 7.50393 4.08361 7.21431 4.22461L6.50452 4.57017C6.26786 4.68538 5.99532 4.70265 5.74602 4.61822L3.98892 4.02314C3.5241 3.86571 3.01374 4.06885 2.78423 4.50264L1.40091 7.11724C1.17022 7.55327 1.29195 8.09238 1.68761 8.38698L2.77965 9.20009C3.03309 9.3888 3.18243 9.68619 3.18243 10.0022V11.1228C3.18243 11.4388 3.03309 11.7362 2.77965 11.9249L1.68761 12.738C1.29195 13.0326 1.17022 13.5717 1.40091 14.0078L2.75343 16.5642C2.99611 17.0228 3.54932 17.2197 4.02719 17.0174L5.5818 16.3592C5.92232 16.2151 6.31459 16.2706 6.60173 16.5036L7.394 17.1464C7.57598 17.2941 7.70032 17.501 7.74532 17.731L8.03112 19.192C8.12294 19.6614 8.53426 20 9.01252 20H11.9337C12.3775 20 12.7683 19.7074 12.8932 19.2816L13.365 17.6738C13.4221 17.4792 13.537 17.3066 13.6945 17.1788L14.518 16.5106C14.8097 16.2739 15.2094 16.2207 15.5528 16.3727L16.965 16.9977C17.4452 17.2102 18.008 17.0151 18.2536 16.5509L19.5991 14.0078C19.8298 13.5717 19.7081 13.0326 19.3124 12.738L18.2204 11.9249C17.9669 11.7362 17.8176 11.4388 17.8176 11.1228V10.0022C17.8176 9.68619 17.9669 9.3888 18.2204 9.20009L19.2621 8.42445C19.6792 8.11387 19.7886 7.53543 19.5138 7.09393L17.8789 4.46734C17.6211 4.05314 17.102 3.88545 16.6506 4.07052L15.4076 4.58011C15.144 4.6882 14.8468 4.67869 14.5906 4.55396L13.8685 4.20245C13.6047 4.07402 13.4106 3.83621 13.3377 3.55203L12.8753 1.75131C12.7618 1.30915 12.3633 1 11.9068 1H9.03256C8.54538 1 8.12909 1.35108 8.0469 1.83128Z" stroke="#9D9D9D"/>
+                                    <circle cx="10.5" cy="10.5" r="3" stroke="#9D9D9D"/>
+                                </svg>
+                            </label>
+                        </div>
+                        <div class="elements_row aside">
+                            <label class="speaker_item">
+                                <input type="checkbox" name="tcorr[front_left][low]"  data-target="#front_low_left">
+                                <span class="side_name">FL</span>
+                                <span class="level_name">low</span>
+                                <span class="background"></span>
+                                <svg width="21" height="21" viewBox="0 0 21 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M8.0469 1.83128L7.76225 3.49422C7.7079 3.81173 7.50393 4.08361 7.21431 4.22461L6.50452 4.57017C6.26786 4.68538 5.99532 4.70265 5.74602 4.61822L3.98892 4.02314C3.5241 3.86571 3.01374 4.06885 2.78423 4.50264L1.40091 7.11724C1.17022 7.55327 1.29195 8.09238 1.68761 8.38698L2.77965 9.20009C3.03309 9.3888 3.18243 9.68619 3.18243 10.0022V11.1228C3.18243 11.4388 3.03309 11.7362 2.77965 11.9249L1.68761 12.738C1.29195 13.0326 1.17022 13.5717 1.40091 14.0078L2.75343 16.5642C2.99611 17.0228 3.54932 17.2197 4.02719 17.0174L5.5818 16.3592C5.92232 16.2151 6.31459 16.2706 6.60173 16.5036L7.394 17.1464C7.57598 17.2941 7.70032 17.501 7.74532 17.731L8.03112 19.192C8.12294 19.6614 8.53426 20 9.01252 20H11.9337C12.3775 20 12.7683 19.7074 12.8932 19.2816L13.365 17.6738C13.4221 17.4792 13.537 17.3066 13.6945 17.1788L14.518 16.5106C14.8097 16.2739 15.2094 16.2207 15.5528 16.3727L16.965 16.9977C17.4452 17.2102 18.008 17.0151 18.2536 16.5509L19.5991 14.0078C19.8298 13.5717 19.7081 13.0326 19.3124 12.738L18.2204 11.9249C17.9669 11.7362 17.8176 11.4388 17.8176 11.1228V10.0022C17.8176 9.68619 17.9669 9.3888 18.2204 9.20009L19.2621 8.42445C19.6792 8.11387 19.7886 7.53543 19.5138 7.09393L17.8789 4.46734C17.6211 4.05314 17.102 3.88545 16.6506 4.07052L15.4076 4.58011C15.144 4.6882 14.8468 4.67869 14.5906 4.55396L13.8685 4.20245C13.6047 4.07402 13.4106 3.83621 13.3377 3.55203L12.8753 1.75131C12.7618 1.30915 12.3633 1 11.9068 1H9.03256C8.54538 1 8.12909 1.35108 8.0469 1.83128Z" stroke="#9D9D9D"/>
+                                    <circle cx="10.5" cy="10.5" r="3" stroke="#9D9D9D"/>
+                                </svg>
+                            </label>
+                            <label class="speaker_item">
+                                <input type="checkbox" name="tcorr[front_right][low]"  data-target="#front_low_right">
+                                <span class="side_name">FR</span>
+                                <span class="level_name">low</span>
+                                <span class="background"></span>
+                                <svg width="21" height="21" viewBox="0 0 21 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M8.0469 1.83128L7.76225 3.49422C7.7079 3.81173 7.50393 4.08361 7.21431 4.22461L6.50452 4.57017C6.26786 4.68538 5.99532 4.70265 5.74602 4.61822L3.98892 4.02314C3.5241 3.86571 3.01374 4.06885 2.78423 4.50264L1.40091 7.11724C1.17022 7.55327 1.29195 8.09238 1.68761 8.38698L2.77965 9.20009C3.03309 9.3888 3.18243 9.68619 3.18243 10.0022V11.1228C3.18243 11.4388 3.03309 11.7362 2.77965 11.9249L1.68761 12.738C1.29195 13.0326 1.17022 13.5717 1.40091 14.0078L2.75343 16.5642C2.99611 17.0228 3.54932 17.2197 4.02719 17.0174L5.5818 16.3592C5.92232 16.2151 6.31459 16.2706 6.60173 16.5036L7.394 17.1464C7.57598 17.2941 7.70032 17.501 7.74532 17.731L8.03112 19.192C8.12294 19.6614 8.53426 20 9.01252 20H11.9337C12.3775 20 12.7683 19.7074 12.8932 19.2816L13.365 17.6738C13.4221 17.4792 13.537 17.3066 13.6945 17.1788L14.518 16.5106C14.8097 16.2739 15.2094 16.2207 15.5528 16.3727L16.965 16.9977C17.4452 17.2102 18.008 17.0151 18.2536 16.5509L19.5991 14.0078C19.8298 13.5717 19.7081 13.0326 19.3124 12.738L18.2204 11.9249C17.9669 11.7362 17.8176 11.4388 17.8176 11.1228V10.0022C17.8176 9.68619 17.9669 9.3888 18.2204 9.20009L19.2621 8.42445C19.6792 8.11387 19.7886 7.53543 19.5138 7.09393L17.8789 4.46734C17.6211 4.05314 17.102 3.88545 16.6506 4.07052L15.4076 4.58011C15.144 4.6882 14.8468 4.67869 14.5906 4.55396L13.8685 4.20245C13.6047 4.07402 13.4106 3.83621 13.3377 3.55203L12.8753 1.75131C12.7618 1.30915 12.3633 1 11.9068 1H9.03256C8.54538 1 8.12909 1.35108 8.0469 1.83128Z" stroke="#9D9D9D"/>
+                                    <circle cx="10.5" cy="10.5" r="3" stroke="#9D9D9D"/>
+                                </svg>
+                            </label>
+                        </div>
+                        <div class="elements_row center">
+                            <label class="speaker_item">
+                                <input type="checkbox" name="tcorr[sub][left]" data-target="#sub_left">
+                                <span class="side_name">SUB</span>
+                                <span class="level_name">left</span>
+                                <span class="background"></span>
+                                <svg width="21" height="21" viewBox="0 0 21 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M8.0469 1.83128L7.76225 3.49422C7.7079 3.81173 7.50393 4.08361 7.21431 4.22461L6.50452 4.57017C6.26786 4.68538 5.99532 4.70265 5.74602 4.61822L3.98892 4.02314C3.5241 3.86571 3.01374 4.06885 2.78423 4.50264L1.40091 7.11724C1.17022 7.55327 1.29195 8.09238 1.68761 8.38698L2.77965 9.20009C3.03309 9.3888 3.18243 9.68619 3.18243 10.0022V11.1228C3.18243 11.4388 3.03309 11.7362 2.77965 11.9249L1.68761 12.738C1.29195 13.0326 1.17022 13.5717 1.40091 14.0078L2.75343 16.5642C2.99611 17.0228 3.54932 17.2197 4.02719 17.0174L5.5818 16.3592C5.92232 16.2151 6.31459 16.2706 6.60173 16.5036L7.394 17.1464C7.57598 17.2941 7.70032 17.501 7.74532 17.731L8.03112 19.192C8.12294 19.6614 8.53426 20 9.01252 20H11.9337C12.3775 20 12.7683 19.7074 12.8932 19.2816L13.365 17.6738C13.4221 17.4792 13.537 17.3066 13.6945 17.1788L14.518 16.5106C14.8097 16.2739 15.2094 16.2207 15.5528 16.3727L16.965 16.9977C17.4452 17.2102 18.008 17.0151 18.2536 16.5509L19.5991 14.0078C19.8298 13.5717 19.7081 13.0326 19.3124 12.738L18.2204 11.9249C17.9669 11.7362 17.8176 11.4388 17.8176 11.1228V10.0022C17.8176 9.68619 17.9669 9.3888 18.2204 9.20009L19.2621 8.42445C19.6792 8.11387 19.7886 7.53543 19.5138 7.09393L17.8789 4.46734C17.6211 4.05314 17.102 3.88545 16.6506 4.07052L15.4076 4.58011C15.144 4.6882 14.8468 4.67869 14.5906 4.55396L13.8685 4.20245C13.6047 4.07402 13.4106 3.83621 13.3377 3.55203L12.8753 1.75131C12.7618 1.30915 12.3633 1 11.9068 1H9.03256C8.54538 1 8.12909 1.35108 8.0469 1.83128Z" stroke="#9D9D9D"/>
+                                    <circle cx="10.5" cy="10.5" r="3" stroke="#9D9D9D"/>
+                                </svg>
+                            </label>
+                            <label class="speaker_item">
+                                <input type="checkbox" name="tcorr[sub][right]" data-target="#sub_right">
+                                <span class="side_name">SUB</span>
+                                <span class="level_name">right</span>
+                                <span class="background"></span>
+                                <svg width="21" height="21" viewBox="0 0 21 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M8.0469 1.83128L7.76225 3.49422C7.7079 3.81173 7.50393 4.08361 7.21431 4.22461L6.50452 4.57017C6.26786 4.68538 5.99532 4.70265 5.74602 4.61822L3.98892 4.02314C3.5241 3.86571 3.01374 4.06885 2.78423 4.50264L1.40091 7.11724C1.17022 7.55327 1.29195 8.09238 1.68761 8.38698L2.77965 9.20009C3.03309 9.3888 3.18243 9.68619 3.18243 10.0022V11.1228C3.18243 11.4388 3.03309 11.7362 2.77965 11.9249L1.68761 12.738C1.29195 13.0326 1.17022 13.5717 1.40091 14.0078L2.75343 16.5642C2.99611 17.0228 3.54932 17.2197 4.02719 17.0174L5.5818 16.3592C5.92232 16.2151 6.31459 16.2706 6.60173 16.5036L7.394 17.1464C7.57598 17.2941 7.70032 17.501 7.74532 17.731L8.03112 19.192C8.12294 19.6614 8.53426 20 9.01252 20H11.9337C12.3775 20 12.7683 19.7074 12.8932 19.2816L13.365 17.6738C13.4221 17.4792 13.537 17.3066 13.6945 17.1788L14.518 16.5106C14.8097 16.2739 15.2094 16.2207 15.5528 16.3727L16.965 16.9977C17.4452 17.2102 18.008 17.0151 18.2536 16.5509L19.5991 14.0078C19.8298 13.5717 19.7081 13.0326 19.3124 12.738L18.2204 11.9249C17.9669 11.7362 17.8176 11.4388 17.8176 11.1228V10.0022C17.8176 9.68619 17.9669 9.3888 18.2204 9.20009L19.2621 8.42445C19.6792 8.11387 19.7886 7.53543 19.5138 7.09393L17.8789 4.46734C17.6211 4.05314 17.102 3.88545 16.6506 4.07052L15.4076 4.58011C15.144 4.6882 14.8468 4.67869 14.5906 4.55396L13.8685 4.20245C13.6047 4.07402 13.4106 3.83621 13.3377 3.55203L12.8753 1.75131C12.7618 1.30915 12.3633 1 11.9068 1H9.03256C8.54538 1 8.12909 1.35108 8.0469 1.83128Z" stroke="#9D9D9D"/>
+                                    <circle cx="10.5" cy="10.5" r="3" stroke="#9D9D9D"/>
+                                </svg>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="navigation">
+                <ul>
+                    <li>
+                        <a href="#speakers">
+                            <svg width="21" height="19" viewBox="0 0 21 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M3.5 11C9.96154 7.37781 15.5256 9.49075 17.5 11" stroke="#818181" stroke-linecap="round"/>
+                                <path d="M6.5 14C10.1923 12.1889 13.3718 13.2454 14.5 14" stroke="#818181" stroke-linecap="round"/>
+                                <path d="M0.5 8C9.73077 2.56671 17.6795 5.73613 20.5 8" stroke="#818181" stroke-linecap="round"/>
+                            </svg>
+                                
+                            <span>Speakers</span>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#eq">
+                            <svg width="19" height="21" viewBox="0 0 19 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <line x1="0.5" y1="6.5" x2="18.5" y2="6.5" stroke="#818181" stroke-linecap="round"/>
+                                <line x1="0.5" y1="10.5" x2="18.5" y2="10.5" stroke="#818181" stroke-linecap="round"/>
+                                <line x1="0.5" y1="14.5" x2="18.5" y2="14.5" stroke="#818181" stroke-linecap="round"/>
+                                <circle cx="4.5" cy="6.5" r="1" fill="white" stroke="#818181"/>
+                                <circle cx="13.5" cy="10.5" r="1" fill="white" stroke="#818181"/>
+                                <circle cx="8.5" cy="14.5" r="1" fill="white" stroke="#818181"/>
+                            </svg>
+                                
+                            <span>EQ</span>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#cross">
+                            <svg width="19" height="19" viewBox="0 0 19 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <circle cx="9.5" cy="9.5" r="9" stroke="#818181"/>
+                                <circle cx="9.50007" cy="9.50001" r="3.81818" stroke="#818181"/>
+                            </svg>
+                                
+                                
+                            <span>Cross</span>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#tcorr">
+                            <svg width="21" height="21" viewBox="0 0 21 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M8.0469 1.83128L7.76225 3.49422C7.7079 3.81173 7.50393 4.08361 7.21431 4.22461L6.50452 4.57017C6.26786 4.68538 5.99532 4.70265 5.74602 4.61822L3.98892 4.02314C3.5241 3.86571 3.01374 4.06885 2.78423 4.50264L1.40091 7.11724C1.17022 7.55327 1.29195 8.09238 1.68761 8.38698L2.77965 9.20009C3.03309 9.3888 3.18243 9.68619 3.18243 10.0022V11.1228C3.18243 11.4388 3.03309 11.7362 2.77965 11.9249L1.68761 12.738C1.29195 13.0326 1.17022 13.5717 1.40091 14.0078L2.75343 16.5642C2.99611 17.0228 3.54932 17.2197 4.02719 17.0174L5.5818 16.3592C5.92232 16.2151 6.31459 16.2706 6.60173 16.5036L7.394 17.1464C7.57598 17.2941 7.70032 17.501 7.74532 17.731L8.03112 19.192C8.12294 19.6614 8.53426 20 9.01252 20H11.9337C12.3775 20 12.7683 19.7074 12.8932 19.2816L13.365 17.6738C13.4221 17.4792 13.537 17.3066 13.6945 17.1788L14.518 16.5106C14.8097 16.2739 15.2094 16.2207 15.5528 16.3727L16.965 16.9977C17.4452 17.2102 18.008 17.0151 18.2536 16.5509L19.5991 14.0078C19.8298 13.5717 19.7081 13.0326 19.3124 12.738L18.2204 11.9249C17.9669 11.7362 17.8176 11.4388 17.8176 11.1228V10.0022C17.8176 9.68619 17.9669 9.3888 18.2204 9.20009L19.2621 8.42445C19.6792 8.11387 19.7886 7.53543 19.5138 7.09393L17.8789 4.46734C17.6211 4.05314 17.102 3.88545 16.6506 4.07052L15.4076 4.58011C15.144 4.6882 14.8468 4.67869 14.5906 4.55396L13.8685 4.20245C13.6047 4.07402 13.4106 3.83621 13.3377 3.55203L12.8753 1.75131C12.7618 1.30915 12.3633 1 11.9068 1H9.03256C8.54538 1 8.12909 1.35108 8.0469 1.83128Z" stroke="#818181"/>
+                                <circle cx="10.5" cy="10.5" r="3" stroke="#818181"/>
+                            </svg>
+                                
+                            <span>TCorr</span>
+                        </a>
+                    </li>
+
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.8.0/chart.min.js" integrity="sha512-sW/w8s4RWTdFFSduOTGtk4isV1+190E/GghVffMA9XczdJ2MDzSzLEubKAs5h0wzgSJOQTRYyaz73L3d6RtJSg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.8.0/dist/chart.min.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
