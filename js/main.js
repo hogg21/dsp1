@@ -64,6 +64,8 @@ window.onload = function(){
     });
     // toggle buttons(hi, mid, low, sub) - EQ
     (function () {
+        const changeValue = document.querySelector('input[range]')
+        console.log(changeValue);
         let buttonHigh = document.querySelector('.high')
         buttonHigh.style.backgroundColor = '#5B5B5B'
         buttonHigh.addEventListener('click', function () {
@@ -105,11 +107,6 @@ window.onload = function(){
             myChart.hide(2)
             myChart.hide(1)
             buttonSub.style.backgroundColor = '#F4CE44'
-            if (myChart.hide(3)) {
-                buttonSub.style.backgroundColor = '#5B5B5B'
-            } else {
-                buttonSub.style.backgroundColor = '#F4CE44'
-            }
         })
     })();
     // Char Line
@@ -163,6 +160,7 @@ window.onload = function(){
             if(item.classList.contains('cross_range')){
                 percent = ((this.value*1) / 25) * 100;
             }
+            myChart.data.datasets[0].data[0] = values[this.value]
             
             
             this.parentNode.querySelector('.range_text .range_value .number').textContent = values[this.value];
