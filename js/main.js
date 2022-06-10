@@ -64,54 +64,51 @@ window.onload = function(){
     });
     // toggle buttons(hi, mid, low, sub) - EQ
     (function () {
-        let buttonHigh = document.querySelector('.level_item')
+        let buttonHigh = document.querySelector('.high')
+        buttonHigh.style.backgroundColor = '#5B5B5B'
         buttonHigh.addEventListener('click', function () {
-            const showValue = myChart.isDatasetVisible(0)
-            if (showValue === false) {
-                myChart.show(0)
-                myChart.data.datasets[0].borderWidth = 6
-                myChart.update()
-            }
-            if (showValue === true) {
-                myChart.hide(0)
-                myChart.data.datasets[0].borderWidth = 1
-            }
+            myChart.show(0)
+            myChart.hide(1)
+            myChart.hide(2)
+            myChart.hide(3)
+            // #E23A3A - bgc hi
+            buttonHigh.style.backgroundColor = '#E23A3A'
+
         })
         let buttonMid = document.querySelector('.mid')
+        buttonMid.style.backgroundColor = '#5B5B5B'
 
         buttonMid.addEventListener('click', function () {
-            const showValue = myChart.isDatasetVisible(1)
-            if (showValue === false) {
-                myChart.show(1)
-                myChart.data.datasets[1].borderWidth = 6
-            }
-            if (showValue === true) {
-                myChart.hide(1)
-                myChart.data.datasets[1].borderWidth = 1
-            }
+            myChart.show(1)
+            myChart.hide(0)
+            myChart.hide(2)
+            myChart.hide(3)
+            buttonMid.style.backgroundColor = '#6499FF'
+
         })
         let buttonLow = document.querySelector('.low')
+        buttonLow.style.backgroundColor = '#5B5B5B'
+
         buttonLow.addEventListener('click', function () {
-            const showValue = myChart.isDatasetVisible(2)
-            if (showValue === false) {
-                myChart.show(2)
-                myChart.data.datasets[2].borderWidth = 6
-            }
-            if (showValue === true) {
-                myChart.hide(2)
-                myChart.data.datasets[2].borderWidth = 1
-            }
+            myChart.show(2)
+            myChart.hide(0)
+            myChart.hide(1)
+            myChart.hide(3)
+            buttonLow.style.backgroundColor = '#7DD155'
         })
 
         let buttonSub = document.querySelector('.sub')
+        buttonSub.style.backgroundColor = '#5B5B5B'
         buttonSub.addEventListener('click', function () {
-            const showValue = myChart.isDatasetVisible(3)
-            if (showValue === false) {
-                myChart.show(3)
-                myChart.data.datasets[3].borderWidth = 6
-            } if (showValue === true) {
-                myChart.hide(3)
-                myChart.data.datasets[3].borderWidth = 1
+            myChart.show(3)
+            myChart.hide(0)
+            myChart.hide(2)
+            myChart.hide(1)
+            buttonSub.style.backgroundColor = '#F4CE44'
+            if (myChart.hide(3)) {
+                buttonSub.style.backgroundColor = '#5B5B5B'
+            } else {
+                buttonSub.style.backgroundColor = '#F4CE44'
             }
         })
     })();
