@@ -9,7 +9,7 @@ window.onload = function(){
             labels: ['100', '1k', '20000'],
             datasets: [{
                 label: 'high',
-                data: [-40, -2, -2, -15],
+                data: [-40, -2, -2],
                 backgroundColor: [
                     'rgba(255, 99, 132, 0.2)',
                 ],
@@ -21,7 +21,7 @@ window.onload = function(){
             },
                 {
                     label: 'mid',
-                    data: [-10, 2, 2, 15],
+                    data: [-10, 2, 2],
                     backgroundColor: ['rgb(0, 0, 255)'],
                     borderColor: [
                         'rgb(100, 153, 255, 1)',
@@ -31,7 +31,7 @@ window.onload = function(){
                 },
                 {
                     label: 'sub',
-                    data: [5, -20, 14, 30],
+                    data: [5, -20, 14],
                     backgroundColor: ['rgb(255, 255, 0)'],
                     borderColor: [
                         'rgb(255, 255, 0)'
@@ -41,7 +41,7 @@ window.onload = function(){
                 },
                 {
                     label: 'low',
-                    data: [2, -2, -5, 10],
+                    data: [2, -2, -5],
                     backgroundColor: ['rgb(150, 255, 100)'],
                     borderColor: ['rgb(150, 255, 100)'],
                     borderWidth: 1,
@@ -147,37 +147,72 @@ window.onload = function(){
 
     // Range Slider Стилы
     let allRangeSliders = document.querySelectorAll("[type=range]");
-    const toggleButtons = document.querySelectorAll('.fl_items')
     allRangeSliders.forEach(function(item){
         item.oninput = function () {
             let buttonHigh = document.querySelector('.high');
             let buttonLow = document.querySelector('.low');
             let buttonSub = document.querySelector('.sub');
             let buttonMid = document.querySelector('.mid');
+            let lowButton = document.querySelector('.fl_item')
+            let highButton = document.querySelector('.high-button')
+            console.log(lowButton.getAttribute('data-target'));
+            console.log(highButton.getAttribute('data-target'));
 
             const values = [1, 1.1, 1.25, 1.4, 1.6, 1.8, 2, 2.25, 2.85, 3.15, 3.6, 4, 4.5, 5, 5.6, 6.3, 7.1, 8, 9, 10, 11.2, 12.5, 14.3, 16, 18];
             let percent = (this.value / 20) * 100;
 
             
-
             console.log(values[this.value] * 1000);
             
             if(item.classList.contains('cross_range')){
                 percent = ((this.value*1) / 25) * 100;
             }
             if (buttonHigh) {
-                myChart.data.datasets[0].data[0] = values[this.value]
-            }
-            if (buttonLow) {
-                myChart.data.datasets[1].data[1] = values[this.value]
+                lowButton = myChart.data.datasets[0].data[0] = values[this.value]
+                highButton = myChart.data.datasets[0].data[1] = values[this.value]
+                myChart.update()
             }
             if (buttonMid) {
-                myChart.data.datasets[2].data[2] = values[this.value]
+                lowButton = myChart.data.datasets[1].data[1] = values[this.value]
+                myChart.update()
+            } else {
+                highButton = myChart.data.datasets[1].data[0] = values[this.value]
+                myChart.update()
             }
             if (buttonSub) {
-                myChart.data.datasets[3].data[3] = values[this.value]
+                lowButton = myChart.data.datasets[2].data[2] = values[this.value]
+                myChart.update()
+            } else {
+                highButton = myChart.data.datasets[2].data[1] = values[this.value]
+                myChart.update()
             }
-            
+            if (buttonLow) {
+                lowButton = myChart.data.datasets[3].data[1] = values[this.value]
+                myChart.update()
+            } else {
+                highButton = myChart.data.datasets[3].data[0] = values[this.value]
+                myChart.update()
+            }
+            // if (lowButton) {
+            //     myChart.data.datasets[0].data[0] = values[this.value]
+            //     myChart.data.datasets[0].data[1] = values[this.values]
+            //     myChart.data.datasets[0].data[2] = values[this.value]
+            //     myChart.data.datasets[0].data[3] = values[this.values]
+            //     myChart.data.datasets[2].data[1] = values[this.values]
+            //     myChart.data.datasets[2].data[2] = values[this.values]
+            //     myChart.data.datasets[2].data[2] = values[this.values]
+            //     myChart.update()
+            // }
+            // if (highButton) {
+            //     myChart.data.datasets[1].data[1] = values[this.values]
+            //     myChart.data.datasets[1].data[0] = values[this.values]
+            //     myChart.data.datasets[1].data[2] = values[this.value]
+            //     myChart.data.datasets[1].data[3] = values[this.values]
+            //     myChart.data.datasets[3].data[1] = values[this.values]
+            //     myChart.data.datasets[3].data[2] = values[this.values]
+            //     myChart.data.datasets[3].data[3] = values[this.values]
+            //     myChart.update()
+            // }
             this.parentNode.querySelector('.range_text .range_value .number').textContent = values[this.value];
             this.style.background = 'linear-gradient(to right, #A482EE 0%, #A482EE '+ percent +'%, #535353 ' + percent + '%, #535353 100%)'
         };
