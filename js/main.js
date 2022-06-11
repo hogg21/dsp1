@@ -147,8 +147,13 @@ window.onload = function(){
 
     // Range Slider Стилы
     let allRangeSliders = document.querySelectorAll("[type=range]");
+    const toggleButtons = document.querySelectorAll('.fl_items')
     allRangeSliders.forEach(function(item){
-        item.oninput = function() {
+        item.oninput = function () {
+            let buttonHigh = document.querySelector('.high');
+            let buttonLow = document.querySelector('.low');
+            let buttonSub = document.querySelector('.sub');
+            let buttonMid = document.querySelector('.mid');
 
             const values = [1, 1.1, 1.25, 1.4, 1.6, 1.8, 2, 2.25, 2.85, 3.15, 3.6, 4, 4.5, 5, 5.6, 6.3, 7.1, 8, 9, 10, 11.2, 12.5, 14.3, 16, 18];
             let percent = (this.value / 20) * 100;
@@ -160,8 +165,18 @@ window.onload = function(){
             if(item.classList.contains('cross_range')){
                 percent = ((this.value*1) / 25) * 100;
             }
-            myChart.data.datasets[0].data[0] = values[this.value]
-            
+            if (buttonHigh) {
+                myChart.data.datasets[0].data[0] = values[this.value]
+            }
+            if (buttonLow) {
+                myChart.data.datasets[1].data[1] = values[this.value]
+            }
+            if (buttonMid) {
+                myChart.data.datasets[2].data[2] = values[this.value]
+            }
+            if (buttonSub) {
+                myChart.data.datasets[3].data[3] = values[this.value]
+            }
             
             this.parentNode.querySelector('.range_text .range_value .number').textContent = values[this.value];
             this.style.background = 'linear-gradient(to right, #A482EE 0%, #A482EE '+ percent +'%, #535353 ' + percent + '%, #535353 100%)'
