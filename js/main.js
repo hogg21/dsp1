@@ -256,6 +256,9 @@ window.onload = function(){
             myChart.hide(2)
             myChart.hide(3)
             buttonHigh.style.backgroundColor = '#E23A3A'
+            buttonSub.style.backgroundColor = '#5B5B5B'
+            buttonLow.style.backgroundColor = '#5B5B5B'
+            buttonMid.style.backgroundColor = '#5B5B5B'
         })
         buttonMid.addEventListener('click', function () {
             myChart.show(1)
@@ -263,6 +266,9 @@ window.onload = function(){
             myChart.hide(2)
             myChart.hide(3)
             buttonMid.style.backgroundColor = '#6499FF'
+            buttonSub.style.backgroundColor = '#5B5B5B'
+            buttonHigh.style.backgroundColor = '#5B5B5B'
+            buttonLow.style.backgroundColor = '#5B5B5B'
         })
         buttonLow.addEventListener('click', function () {
             myChart.show(2)
@@ -270,6 +276,9 @@ window.onload = function(){
             myChart.hide(1)
             myChart.hide(3)
             buttonLow.style.backgroundColor = '#7DD155'
+            buttonSub.style.backgroundColor = '#5B5B5B'
+            buttonHigh.style.backgroundColor = '#5B5B5B'
+            buttonMid.style.backgroundColor = '#5B5B5B'
         })
         buttonSub.addEventListener('click', function () {
             myChart.show(3)
@@ -277,16 +286,18 @@ window.onload = function(){
             myChart.hide(2)
             myChart.hide(1)
             buttonSub.style.backgroundColor = '#F4CE44'
+            buttonHigh.style.backgroundColor = '#5B5B5B'
+            buttonMid.style.backgroundColor = '#5B5B5B'
+            buttonLow.style.backgroundColor = '#5B5B5B'
         })
     })();
 
 
     const crossSettingsBlock = document.querySelector('.cross_settings_block');
     // Styling crossSettingsBlock
-    crossSettingsBlock.style.marginLeft = '-360px';
+    crossSettingsBlock.style.marginLeft = '-416px';
     crossSettingsBlock.style.marginRight = '20px';
     crossSettingsBlock.style.marginTop = '220px'
-
 
 
     // Range Slider Стилы &&  Change Value by Range
