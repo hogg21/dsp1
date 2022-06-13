@@ -128,7 +128,67 @@ window.onload = function(){
             
         })
     })
-
+    // second chart
+    // const ctx1 = document.getElementById('cross_chart')
+    // const myChart1 = new Chart(ctx1, {
+    //     type: 'line',
+    //     data: {
+    //         labels: ['100', '1k', '20000'],
+    //         datasets: [{
+    //             label: 'high',
+    //             data: [-40, -2, -2],
+    //             backgroundColor: [
+    //                 'rgba(255, 99, 132, 0.2)',
+    //             ],
+    //             borderColor: [
+    //                 'rgba(255, 99, 132, 1)',
+    //             ],
+    //             borderWidth: 1,
+    //             pointBorderWidth: 5
+    //         },
+    //         {
+    //             label: 'mid',
+    //             data: [-10, 2, 2],
+    //             backgroundColor: ['rgb(0, 0, 255)'],
+    //             borderColor: [
+    //                 'rgb(100, 153, 255, 1)',
+    //             ],
+    //             borderWidth: 1,
+    //             pointBorderWidth: 5
+    //         },
+    //         {
+    //             label: 'sub',
+    //             data: [5, -20, 14],
+    //             backgroundColor: ['rgb(255, 255, 0)'],
+    //             borderColor: [
+    //                 'rgb(255, 255, 0)'
+    //             ],
+    //             borderWidth: 1,
+    //             pointBorderWidth: 5
+    //         },
+    //         {
+    //             label: 'low',
+    //             data: [2, -2, -5],
+    //             backgroundColor: ['rgb(150, 255, 100)'],
+    //             borderColor: ['rgb(150, 255, 100)'],
+    //             borderWidth: 1,
+    //             pointBorderWidth: 5
+    //         }
+    //         ]
+    //     },
+    //     options: {
+    //         scales: {
+    //             y: {
+    //                 display: true,
+    //                 stacked: true,
+    //                 ticks: {
+    //                     min: 100, // minimum value
+    //                     max: 20000 // maximum value
+    //                 }
+    //             }
+    //         },
+    //     },
+    // });
     // Спикеры все off или on
     switcherInput = document.querySelector('[name=switchers_all]');
     switcherInput.addEventListener('input',function(e){
@@ -145,7 +205,91 @@ window.onload = function(){
         }
     })
 
-    // Range Slider Стилы
+    // style 5 frequency level
+    const dbNum = document.querySelector('.cross_number')
+    dbNum.style.color = '#A482EE';
+    dbNum.style.fontSize = '12px';
+    dbNum.style.fontWeight = '700';
+
+
+    // Eq list frequency
+    (function () {
+        const levelName = document.querySelector('.frequenc')
+        // levelName.textContent = 1
+        const frequList = document.getElementById('cross_frequency')
+        frequList.style.backgroundColor = '#272727'
+        frequList.style.color = '#9D9D9D'
+        frequList.style.fontSize = '16px'
+        frequList.addEventListener('click', function () {
+            if (frequList.value === 'Low') {
+                levelName.textContent = 'Low'
+            }
+            if (frequList.value === 'High') {
+                levelName.textContent = 'High'
+            }
+            if (frequList.value === 'Band') {
+                levelName.textContent = 'Band'
+            }
+            if (frequList.value === 'Level') {
+                levelName.textContent = 'Level'
+            }
+            if (frequList.value === 'Q Factor') {
+                levelName.textContent = 'Q Factor'
+            }
+            if (frequList.value === 'Frequency') {
+                levelName.textContent = 'Frequency'
+            }
+        })
+    })();
+    (function () {
+        let buttonHigh = document.querySelector('.cross_high');
+        let buttonLow = document.querySelector('.cross_low');
+        let buttonSub = document.querySelector('.cross_sub');
+        let buttonMid = document.querySelector('.cross_mid');
+        buttonHigh.style.backgroundColor = '#5B5B5B'
+        buttonLow.style.backgroundColor = '#5B5B5B'
+        buttonMid.style.backgroundColor = '#5B5B5B'
+        buttonSub.style.backgroundColor = '#5B5B5B'
+        buttonHigh.addEventListener('click', function () {
+            myChart.show(0)
+            myChart.hide(1)
+            myChart.hide(2)
+            myChart.hide(3)
+            buttonHigh.style.backgroundColor = '#E23A3A'
+        })
+        buttonMid.addEventListener('click', function () {
+            myChart.show(1)
+            myChart.hide(0)
+            myChart.hide(2)
+            myChart.hide(3)
+            buttonMid.style.backgroundColor = '#6499FF'
+        })
+        buttonLow.addEventListener('click', function () {
+            myChart.show(2)
+            myChart.hide(0)
+            myChart.hide(1)
+            myChart.hide(3)
+            buttonLow.style.backgroundColor = '#7DD155'
+        })
+        buttonSub.addEventListener('click', function () {
+            myChart.show(3)
+            myChart.hide(0)
+            myChart.hide(2)
+            myChart.hide(1)
+            buttonSub.style.backgroundColor = '#F4CE44'
+        })
+    })();
+
+
+    const crossSettingsBlock = document.querySelector('.cross_settings_block');
+    // Styling crossSettingsBlock
+    crossSettingsBlock.style.marginLeft = '-360px';
+    crossSettingsBlock.style.marginRight = '20px';
+    crossSettingsBlock.style.marginTop = '220px'
+
+
+
+    // Range Slider Стилы &&  Change Value by Range
     let allRangeSliders = document.querySelectorAll("[type=range]");
     allRangeSliders.forEach(function(item){
         item.oninput = function () {
@@ -155,8 +299,6 @@ window.onload = function(){
             let buttonMid = document.querySelector('.mid');
             let lowButton = document.querySelector('.fl_item')
             let highButton = document.querySelector('.high-button')
-            console.log(lowButton.getAttribute('data-target'));
-            console.log(highButton.getAttribute('data-target'));
 
             const values = [1, 1.1, 1.25, 1.4, 1.6, 1.8, 2, 2.25, 2.85, 3.15, 3.6, 4, 4.5, 5, 5.6, 6.3, 7.1, 8, 9, 10, 11.2, 12.5, 14.3, 16, 18];
             let percent = (this.value / 20) * 100;
@@ -193,26 +335,6 @@ window.onload = function(){
                 highButton = myChart.data.datasets[3].data[0] = values[this.value]
                 myChart.update()
             }
-            // if (lowButton) {
-            //     myChart.data.datasets[0].data[0] = values[this.value]
-            //     myChart.data.datasets[0].data[1] = values[this.values]
-            //     myChart.data.datasets[0].data[2] = values[this.value]
-            //     myChart.data.datasets[0].data[3] = values[this.values]
-            //     myChart.data.datasets[2].data[1] = values[this.values]
-            //     myChart.data.datasets[2].data[2] = values[this.values]
-            //     myChart.data.datasets[2].data[2] = values[this.values]
-            //     myChart.update()
-            // }
-            // if (highButton) {
-            //     myChart.data.datasets[1].data[1] = values[this.values]
-            //     myChart.data.datasets[1].data[0] = values[this.values]
-            //     myChart.data.datasets[1].data[2] = values[this.value]
-            //     myChart.data.datasets[1].data[3] = values[this.values]
-            //     myChart.data.datasets[3].data[1] = values[this.values]
-            //     myChart.data.datasets[3].data[2] = values[this.values]
-            //     myChart.data.datasets[3].data[3] = values[this.values]
-            //     myChart.update()
-            // }
             this.parentNode.querySelector('.range_text .range_value .number').textContent = values[this.value];
             this.style.background = 'linear-gradient(to right, #A482EE 0%, #A482EE '+ percent +'%, #535353 ' + percent + '%, #535353 100%)'
         };
@@ -319,6 +441,27 @@ function clearContentBlocks(){
         item.classList.remove('active');
     })
 }
+(function () {
+    const changeRange = document.querySelector('.range_value')
+    const frList = document.getElementById('.cross_fr')
+    frList.addEventListener('click', function () {
+        if (frList.value === '-6dB/Oct') {
+            changeRange.textContent = '-6db/Oct'
+        }
+        if (frList.value === '-12dB/Oct') {
+            changeRange.textContent = '-12db/Oct'
+        }
+        if (frList.value === '-18dB/Oct') {
+            changeRange.textContent = '-18db/Oct'
+        }
+        if (frList.value === '-24dB/Oct') {
+            changeRange.textContent = '-24db/Oct'
+        }
+        if (frList.value === '-30dB/Oct') {
+            changeRange.textContent = '-30db/Oct'
+        }
+    })
+})();
 
 // Очишаем все элементы навигации
 function clearNavItems(){

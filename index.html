@@ -146,8 +146,6 @@
                     </div>
                 </div>
                 <div class="content_block active" id="eq">
-                    <canvas class="chart_block" id="eq_chart">
-                    </canvas>
                     <div class="settings_block">
                         <div class="levels_block">
                             <div class="level_item high active">
@@ -169,9 +167,16 @@
                             <div class="position_item right">Right</div>
                         </div>
                         <div class="frequency_block">
-                            
+                            <select name="cross[common_high][high][slope]" id="cross_frequency">
+                                <option value="Low">Low</option>
+                                <option value="High">High</option>
+                                <option value="Level">Level</option>
+                                <option value="Band">Band</option>
+                                <option value="Q Factor">Q Factor</option>
+                                <option value="Frequency">Frequency</option>
+                            </select>
                             <div class="frequency_levels">
-                                <div class="level_name">Low</div>
+                                <div class="level_name frequenc">Band</div>
                                 <div class="fl_levels_row">
                                     <div class="fl_item low active" data-target=".low">
                                         Low
@@ -185,25 +190,19 @@
                             <div class="frequency_levels_item low active">
                                 <div class="frequency_range ">
                                     <div class="range_text">
-                                        <span class="min">min</span>
+                                        <span class="min">-</span>
                                         <span class="range_value">
-                                            <span class="number">1.1</span>
-                                            <span>kHz</span>
+                                            <span class="number">-18</span>
+                                            <span>dB/Oct</span>
                                         </span>
-                                        <span class="max">max</span>
+                                        <span class="max">+</span>
                                     </div>
-                                    <input class="cross_range" type="range" name="cross[common_high][fr_low]" min="0" max="24">
+                                    <input class="cross_range" type="range" name="cross[common_high][fr_low]" min="-30" max="-6">
                                 </div>
                                 <div class="frequency_slope">
-                                    <div class="title">Slope</div>
+                                    <div class="title">Level</div>
                                     <div class="input">
-                                        <select name="cross[common_high][low][slope]" id="">
-                                            <option value="-6dB/Oct">-6dB/Oct</option>
-                                            <option value="-12dB/Oct">-12dB/Oct</option>
-                                            <option value="-18dB/Oct" selected>-18dB/Oct</option>
-                                            <option value="-24dB/Oct">-24dB/Oct</option>
-                                            <option value="-30dB/Oct">-30dB/Oct</option>
-                                        </select>
+                                        <span class="cross_number">5 dB</span>
                                     </div>
                                     <div class="slope_navigation">
 
@@ -238,7 +237,7 @@
                                 <div class="frequency_slope">
                                     <div class="title">Slope</div>
                                     <div class="input">
-                                        <select name="cross[common_high][high][slope]" id="">
+                                        <select name="cross[common_high][high][slope]" id="cross_fr">
                                             <option value="-6dB/Oct">-6dB/Oct</option>
                                             <option value="-12dB/Oct">-12dB/Oct</option>
                                             <option value="-18dB/Oct" selected>-18dB/Oct</option>
@@ -268,19 +267,21 @@
                 </div>
                 <div class="content_block" id="cross">
                     <div class="chart_block" id="cross_chart">
+                        <canvas class="chart_block" id="eq_chart">
+                        </canvas>
                     </div>
-                    <div class="settings_block">
+                    <div class="settings_block cross_settings_block">
                         <div class="levels_block">
-                            <div class="level_item high active">
+                            <div class="level_item high active cross_high">
                                 hi
                             </div>
-                            <div class="level_item mid">
+                            <div class="level_item mid cross_mid">
                                 mid
                             </div>
-                            <div class="level_item low">
+                            <div class="level_item low cross_low">
                                 low
                             </div>
-                            <div class="level_item sub">
+                            <div class="level_item sub cross_sub">
                                 sub
                             </div>
                         </div>
