@@ -129,66 +129,108 @@ window.onload = function(){
         })
     })
     // second chart
-    // const ctx1 = document.getElementById('cross_chart')
-    // const myChart1 = new Chart(ctx1, {
-    //     type: 'line',
-    //     data: {
-    //         labels: ['100', '1k', '20000'],
-    //         datasets: [{
-    //             label: 'high',
-    //             data: [-40, -2, -2],
-    //             backgroundColor: [
-    //                 'rgba(255, 99, 132, 0.2)',
-    //             ],
-    //             borderColor: [
-    //                 'rgba(255, 99, 132, 1)',
-    //             ],
-    //             borderWidth: 1,
-    //             pointBorderWidth: 5
-    //         },
-    //         {
-    //             label: 'mid',
-    //             data: [-10, 2, 2],
-    //             backgroundColor: ['rgb(0, 0, 255)'],
-    //             borderColor: [
-    //                 'rgb(100, 153, 255, 1)',
-    //             ],
-    //             borderWidth: 1,
-    //             pointBorderWidth: 5
-    //         },
-    //         {
-    //             label: 'sub',
-    //             data: [5, -20, 14],
-    //             backgroundColor: ['rgb(255, 255, 0)'],
-    //             borderColor: [
-    //                 'rgb(255, 255, 0)'
-    //             ],
-    //             borderWidth: 1,
-    //             pointBorderWidth: 5
-    //         },
-    //         {
-    //             label: 'low',
-    //             data: [2, -2, -5],
-    //             backgroundColor: ['rgb(150, 255, 100)'],
-    //             borderColor: ['rgb(150, 255, 100)'],
-    //             borderWidth: 1,
-    //             pointBorderWidth: 5
-    //         }
-    //         ]
-    //     },
-    //     options: {
-    //         scales: {
-    //             y: {
-    //                 display: true,
-    //                 stacked: true,
-    //                 ticks: {
-    //                     min: 100, // minimum value
-    //                     max: 20000 // maximum value
-    //                 }
-    //             }
-    //         },
-    //     },
-    // });
+    const ctx1 = document.getElementById('cross_chart')
+    const myChart1 = new Chart(ctx1, {
+        type: 'line',
+        data: {
+            labels: ['100', '1k', '20000'],
+            datasets: [{
+                label: 'high',
+                data: [-6, -12, -18, -24, -30],
+                backgroundColor: [
+                    'rgba(255, 99, 132, 0.2)',
+                ],
+                borderColor: [
+                    'rgba(255, 99, 132, 1)',
+                ],
+                borderWidth: 1,
+                pointBorderWidth: 5
+            },
+            {
+                label: 'mid',
+                data: [-6, -12, -18, -24, -30],
+                backgroundColor: ['rgb(0, 0, 255)'],
+                borderColor: [
+                    'rgb(100, 153, 255, 1)',
+                ],
+                borderWidth: 1,
+                pointBorderWidth: 5
+            },
+            {
+                label: 'sub',
+                data: [-6, -12, -18, -24, -30],
+                backgroundColor: ['rgb(255, 255, 0)'],
+                borderColor: [
+                    'rgb(255, 255, 0)'
+                ],
+                borderWidth: 1,
+                pointBorderWidth: 5
+            },
+            {
+                label: 'low',
+                data: [-6, -12, -18, -24, -30],
+                backgroundColor: ['rgb(150, 255, 100)'],
+                borderColor: ['rgb(150, 255, 100)'],
+                borderWidth: 1,
+                pointBorderWidth: 5
+            }
+            ]
+        },
+        options: {
+            scales: {
+                y: {
+                    display: true,
+                    stacked: true,
+                    ticks: {
+                        min: 100, // minimum value
+                        max: 20000 // maximum value
+                    }
+                }
+            },
+        },
+    });
+    (function () {
+        let buttonHigh = document.querySelector('.high');
+        let buttonMid = document.querySelector('.mid');
+        let buttonLow = document.querySelector('.low')
+        let buttonSub = document.querySelector('.sub');
+        buttonHigh.addEventListener('click', function () {
+            myChart1.show(0)
+            myChart1.hide(1)
+            myChart1.hide(2)
+            myChart1.hide(3)
+            buttonMid.style.backgroundColor = '#5B5B5B'
+            buttonLow.style.backgroundColor = '#5B5B5B'
+            buttonSub.style.backgroundColor = '#5B5B5B'
+        })
+        buttonLow.addEventListener("click", function () {
+            myChart1.show(3)
+            myChart1.hide(1)
+            myChart1.hide(2)
+            myChart1.hide(0)
+            buttonSub.style.backgroundColor = '#5B5B5B'
+            buttonHigh.style.backgroundColor = '#5B5B5B'
+            buttonMid.style.backgroundColor = '#5B5B5B'
+        })
+        buttonMid.addEventListener('click', function () {
+            myChart1.show(1)
+            myChart1.hide(0)
+            myChart1.hide(2)
+            myChart1.hide(3)
+            buttonSub.style.backgroundColor = '#5B5B5B'
+            buttonHigh.style.backgroundColor = '#5B5B5B'
+            buttonLow.style.backgroundColor = '#5B5B5B'
+        })
+        buttonSub.addEventListener('click', function () {
+            myChart1.show(2)
+            myChart1.hide(1)
+            myChart1.hide(3)
+            myChart1.hide(0)
+            buttonHigh.style.backgroundColor = '#5B5B5B'
+            buttonMid.style.backgroundColor = '#5B5B5B'
+            buttonLow.style.backgroundColor = '#5B5B5B'
+        })
+    })();
     // Спикеры все off или on
     switcherInput = document.querySelector('[name=switchers_all]');
     switcherInput.addEventListener('input',function(e){
@@ -292,13 +334,11 @@ window.onload = function(){
         })
     })();
 
-
     const crossSettingsBlock = document.querySelector('.cross_settings_block');
     // Styling crossSettingsBlock
     crossSettingsBlock.style.marginLeft = '-416px';
     crossSettingsBlock.style.marginRight = '20px';
-    crossSettingsBlock.style.marginTop = '220px'
-
+    crossSettingsBlock.style.marginTop = '220px';
 
     // Range Slider Стилы &&  Change Value by Range
     let allRangeSliders = document.querySelectorAll("[type=range]");
@@ -313,12 +353,11 @@ window.onload = function(){
 
             const values = [1, 1.1, 1.25, 1.4, 1.6, 1.8, 2, 2.25, 2.85, 3.15, 3.6, 4, 4.5, 5, 5.6, 6.3, 7.1, 8, 9, 10, 11.2, 12.5, 14.3, 16, 18];
             let percent = (this.value / 20) * 100;
-
             
             console.log(values[this.value] * 1000);
-            
+            const dbValues = [-30, -24, -18, -12, -6]
             if(item.classList.contains('cross_range')){
-                percent = ((this.value*1) / 25) * 100;
+                percent = ((this.value * 1) / 25) * 100;
             }
             if (buttonHigh) {
                 lowButton = myChart.data.datasets[0].data[0] = values[this.value]
@@ -347,12 +386,11 @@ window.onload = function(){
                 myChart.update()
             }
             this.parentNode.querySelector('.range_text .range_value .number').textContent = values[this.value];
+            this.parentNode.querySelector('.range_text .range_value .number').textContent = dbValues;
             this.style.background = 'linear-gradient(to right, #A482EE 0%, #A482EE '+ percent +'%, #535353 ' + percent + '%, #535353 100%)'
         };
     })
-    
 
-   
     // TCORR элементы для управление
     let allTcorrSpeakers = document.querySelectorAll('#tcorr .speakers_all input');
     allTcorrSpeakers.forEach(function(item){
@@ -441,7 +479,7 @@ window.onload = function(){
     })
 
 
-   
+
 
 
 }
@@ -452,27 +490,6 @@ function clearContentBlocks(){
         item.classList.remove('active');
     })
 }
-(function () {
-    const changeRange = document.querySelector('.range_value')
-    const frList = document.getElementById('.cross_fr')
-    frList.addEventListener('click', function () {
-        if (frList.value === '-6dB/Oct') {
-            changeRange.textContent = '-6db/Oct'
-        }
-        if (frList.value === '-12dB/Oct') {
-            changeRange.textContent = '-12db/Oct'
-        }
-        if (frList.value === '-18dB/Oct') {
-            changeRange.textContent = '-18db/Oct'
-        }
-        if (frList.value === '-24dB/Oct') {
-            changeRange.textContent = '-24db/Oct'
-        }
-        if (frList.value === '-30dB/Oct') {
-            changeRange.textContent = '-30db/Oct'
-        }
-    })
-})();
 
 // Очишаем все элементы навигации
 function clearNavItems(){
