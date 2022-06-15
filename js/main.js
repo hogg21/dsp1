@@ -136,7 +136,7 @@ window.onload = function(){
             labels: ['100', '1k', '20000'],
             datasets: [{
                 label: 'high',
-                data: [-6, -12, -18, -24, -30],
+                data: [-40, -2, -2],
                 backgroundColor: [
                     'rgba(255, 99, 132, 0.2)',
                 ],
@@ -148,7 +148,7 @@ window.onload = function(){
             },
             {
                 label: 'mid',
-                data: [-6, -12, -18, -24, -30],
+                data: [-10, 2, 2],
                 backgroundColor: ['rgb(0, 0, 255)'],
                 borderColor: [
                     'rgb(100, 153, 255, 1)',
@@ -158,7 +158,7 @@ window.onload = function(){
             },
             {
                 label: 'sub',
-                data: [-6, -12, -18, -24, -30],
+                data: [5, -20, 14],
                 backgroundColor: ['rgb(255, 255, 0)'],
                 borderColor: [
                     'rgb(255, 255, 0)'
@@ -168,7 +168,7 @@ window.onload = function(){
             },
             {
                 label: 'low',
-                data: [-6, -12, -18, -24, -30],
+                data: [2, -2, -5],
                 backgroundColor: ['rgb(150, 255, 100)'],
                 borderColor: ['rgb(150, 255, 100)'],
                 borderWidth: 1,
@@ -336,9 +336,10 @@ window.onload = function(){
 
     const crossSettingsBlock = document.querySelector('.cross_settings_block');
     // Styling crossSettingsBlock
-    crossSettingsBlock.style.marginLeft = '-416px';
+    crossSettingsBlock.style.marginLeft = '-345px';
     crossSettingsBlock.style.marginRight = '20px';
     crossSettingsBlock.style.marginTop = '220px';
+    crossSettingsBlock.style.width = '100%';
 
     // Range Slider Стилы &&  Change Value by Range
     let allRangeSliders = document.querySelectorAll("[type=range]");
@@ -355,7 +356,6 @@ window.onload = function(){
             let percent = (this.value / 20) * 100;
             
             console.log(values[this.value] * 1000);
-            const dbValues = [-30, -24, -18, -12, -6]
             if(item.classList.contains('cross_range')){
                 percent = ((this.value * 1) / 25) * 100;
             }
@@ -386,7 +386,6 @@ window.onload = function(){
                 myChart.update()
             }
             this.parentNode.querySelector('.range_text .range_value .number').textContent = values[this.value];
-            this.parentNode.querySelector('.range_text .range_value .number').textContent = dbValues;
             this.style.background = 'linear-gradient(to right, #A482EE 0%, #A482EE '+ percent +'%, #535353 ' + percent + '%, #535353 100%)'
         };
     })
