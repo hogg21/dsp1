@@ -488,7 +488,7 @@ window.onload = function(){
 const crossSettingsBlock = document.querySelector('.cross_settings_block');
 function toggleStyles(x) {
     if (x.matches) {
-        crossSettingsBlock.style.marginLeft = '-340px';
+        crossSettingsBlock.style.marginLeft = '-334px';
         crossSettingsBlock.style.marginRight = '20px';
         crossSettingsBlock.style.marginTop = '220px';
         crossSettingsBlock.style.width = '337px';
