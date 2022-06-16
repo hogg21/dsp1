@@ -324,6 +324,13 @@ header{
             }
 
             .settings_block{
+                &__cross {
+                    @media #{$mini} {
+                        margin-top: 183px;
+                        margin-left: -344px;
+                        width: 100%;
+                    }
+                }
                 .levels_block{
                     display: flex;
                     justify-content: space-between;

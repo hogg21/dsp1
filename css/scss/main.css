@@ -304,6 +304,13 @@ header {
   font-size: 12px;
   color: #A482EE;
 }
+@media (max-width: 380px) {
+  .content .content_block#cross .settings_block__cross, .content .content_block#eq .settings_block__cross {
+    margin-top: 183px;
+    margin-left: -344px;
+    width: 100%;
+  }
+}
 .content .content_block#cross .settings_block .levels_block, .content .content_block#eq .settings_block .levels_block {
   display: flex;
   justify-content: space-between;

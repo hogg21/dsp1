@@ -194,11 +194,16 @@ window.onload = function(){
         let buttonMid = document.querySelector('.mid');
         let buttonLow = document.querySelector('.low')
         let buttonSub = document.querySelector('.sub');
+        buttonHigh.style.backgroundColor = '#5B5B5B'
+        buttonLow.style.backgroundColor = '#5B5B5B'
+        buttonMid.style.backgroundColor = '#5B5B5B'
+        buttonSub.style.backgroundColor = '#5B5B5B'
         buttonHigh.addEventListener('click', function () {
             myChart1.show(0)
             myChart1.hide(1)
             myChart1.hide(2)
             myChart1.hide(3)
+            buttonHigh.style.backgroundColor = '#E23A3A'
             buttonMid.style.backgroundColor = '#5B5B5B'
             buttonLow.style.backgroundColor = '#5B5B5B'
             buttonSub.style.backgroundColor = '#5B5B5B'
@@ -208,6 +213,7 @@ window.onload = function(){
             myChart1.hide(1)
             myChart1.hide(2)
             myChart1.hide(0)
+            buttonLow.style.backgroundColor = '#7DD155'
             buttonSub.style.backgroundColor = '#5B5B5B'
             buttonHigh.style.backgroundColor = '#5B5B5B'
             buttonMid.style.backgroundColor = '#5B5B5B'
@@ -217,6 +223,7 @@ window.onload = function(){
             myChart1.hide(0)
             myChart1.hide(2)
             myChart1.hide(3)
+            buttonMid.style.backgroundColor = '#6499FF'
             buttonSub.style.backgroundColor = '#5B5B5B'
             buttonHigh.style.backgroundColor = '#5B5B5B'
             buttonLow.style.backgroundColor = '#5B5B5B'
@@ -226,6 +233,7 @@ window.onload = function(){
             myChart1.hide(1)
             myChart1.hide(3)
             myChart1.hide(0)
+            buttonSub.style.backgroundColor = '#F4CE44'
             buttonHigh.style.backgroundColor = '#5B5B5B'
             buttonMid.style.backgroundColor = '#5B5B5B'
             buttonLow.style.backgroundColor = '#5B5B5B'
@@ -333,13 +341,6 @@ window.onload = function(){
             buttonLow.style.backgroundColor = '#5B5B5B'
         })
     })();
-
-    const crossSettingsBlock = document.querySelector('.cross_settings_block');
-    // Styling crossSettingsBlock
-    crossSettingsBlock.style.marginLeft = '-345px';
-    crossSettingsBlock.style.marginRight = '20px';
-    crossSettingsBlock.style.marginTop = '220px';
-    crossSettingsBlock.style.width = '100%';
 
     // Range Slider Стилы &&  Change Value by Range
     let allRangeSliders = document.querySelectorAll("[type=range]");
@@ -482,6 +483,21 @@ window.onload = function(){
 
 
 }
+const crossSettingsBlock = document.querySelector('.cross_settings_block');
+function toggleStyles(x) {
+    if (x.matches) {
+        crossSettingsBlock.style.marginLeft = '-347px';
+        crossSettingsBlock.style.marginRight = '20px';
+        crossSettingsBlock.style.marginTop = '220px';
+        crossSettingsBlock.style.width = '337px';
+    } else {
+        crossSettingsBlock.style.marginTop = '214px';
+        crossSettingsBlock.style.marginLeft = '-410px';
+    }
+}
+let x = window.matchMedia("(max-width: 380px)");
+toggleStyles(x);
+x.addEventListener(toggleStyles(x))
 // Очишаем все контент элементы
 function clearContentBlocks(){
     let blocks = document.querySelectorAll('.content_block');
