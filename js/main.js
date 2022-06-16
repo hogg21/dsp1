@@ -341,7 +341,7 @@ window.onload = function(){
             buttonLow.style.backgroundColor = '#5B5B5B'
         })
     })();
-
+   
     // Range Slider Стилы &&  Change Value by Range
     let allRangeSliders = document.querySelectorAll("[type=range]");
     allRangeSliders.forEach(function(item){
@@ -483,10 +483,12 @@ window.onload = function(){
 
 
 }
+
+// toggle low block desktop/mobile
 const crossSettingsBlock = document.querySelector('.cross_settings_block');
 function toggleStyles(x) {
     if (x.matches) {
-        crossSettingsBlock.style.marginLeft = '-347px';
+        crossSettingsBlock.style.marginLeft = '-340px';
         crossSettingsBlock.style.marginRight = '20px';
         crossSettingsBlock.style.marginTop = '220px';
         crossSettingsBlock.style.width = '337px';
@@ -497,7 +499,8 @@ function toggleStyles(x) {
 }
 let x = window.matchMedia("(max-width: 380px)");
 toggleStyles(x);
-x.addEventListener(toggleStyles(x))
+x.addEventListener(toggleStyles(x));
+
 // Очишаем все контент элементы
 function clearContentBlocks(){
     let blocks = document.querySelectorAll('.content_block');
