@@ -341,7 +341,6 @@ window.onload = function(){
             buttonLow.style.backgroundColor = '#5B5B5B'
         })
     })();
-   
     // Range Slider Стилы &&  Change Value by Range
     let allRangeSliders = document.querySelectorAll("[type=range]");
     allRangeSliders.forEach(function(item){
@@ -354,11 +353,13 @@ window.onload = function(){
             let highButton = document.querySelector('.high-button')
 
             const values = [1, 1.1, 1.25, 1.4, 1.6, 1.8, 2, 2.25, 2.85, 3.15, 3.6, 4, 4.5, 5, 5.6, 6.3, 7.1, 8, 9, 10, 11.2, 12.5, 14.3, 16, 18];
+            const values1 = [-30, -24, -18, -12, -6]
             let percent = (this.value / 20) * 100;
-            
+            let percent1 = (this.value / 4) * 100;
             console.log(values[this.value] * 1000);
             if(item.classList.contains('cross_range')){
                 percent = ((this.value * 1) / 25) * 100;
+                percent1 = ((this.value * 1 / 4)) * 100;
             }
             if (buttonHigh) {
                 lowButton = myChart.data.datasets[0].data[0] = values[this.value]
@@ -387,7 +388,10 @@ window.onload = function(){
                 myChart.update()
             }
             this.parentNode.querySelector('.range_text .range_value .number').textContent = values[this.value];
-            this.style.background = 'linear-gradient(to right, #A482EE 0%, #A482EE '+ percent +'%, #535353 ' + percent + '%, #535353 100%)'
+            this.parentNode.querySelector('.eq_range_text .eq_range_value .eq_number').textContent = values1[this.value];
+            this.style.background = 'linear-gradient(to right, #A482EE 0%, #A482EE ' + percent + '%, #535353 ' + percent + '%, #535353 100%)'
+            this.style.background = 'linear-gradient(to right, #A482EE 0%, #A482EE '+ percent1 +'%, #535353 ' + percent1 + '%, #535353 100%)'
+
         };
     })
 
@@ -493,13 +497,13 @@ function toggleStyles(x) {
         crossSettingsBlock.style.marginTop = '220px';
         crossSettingsBlock.style.width = '337px';
     } else {
-        crossSettingsBlock.style.marginTop = '214px';
+        crossSettingsBlock.style.marginTop = '260px';
         crossSettingsBlock.style.marginLeft = '-410px';
     }
 }
 let x = window.matchMedia("(max-width: 380px)");
 toggleStyles(x);
-x.addEventListener(toggleStyles(x));
+x.addEventListener(toggleStyles);
 
 // Очишаем все контент элементы
 function clearContentBlocks(){
